@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<div>
+	<h2>AngularJS Filters</h2>
+	<div>
+		<div class="div">
+			<form>
+				<label>Enter your first name </label><input type="text" name="" ng-model = "student.firstName">
+				<label>Enter your last name </label><input type="text" name="" ng-model = "student.lastName">
+				<label>Enter fees: </label><input type="text" name="" ng-model = "student.fees">
+				<label>Search: </label><input type="text" name="" ng-model = "subjectName">
+				
+			</form>
+			<div>
+			<p>Full Name in Lower Case: {{student.fullName() | lowercase}}</p>
+			<p>Fees: {{student.fees | currency}}</p>
+			</div>
+			<table>
+				<thead>
+					<th>Subject</th>
+					<th>Marks</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "s in student.subjects | filter: subjectName | orderBy:'marks' ">
+						<td>{{s.name}}</td>
+						<td>{{s.marks}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+
+</div>
+</html>

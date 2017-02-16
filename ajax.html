@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<div>
+	<h2>AngularJS Ajax</h2>
+	<div>
+		<div class="div">
+		<span>To execute this example, you need to deploy this project to a web server.</span>
+			<p>Read the "data.txt" using Ajax</p>
+			<button ng-click="getData()"> Load Data</button>
+			<table>
+				<thead>
+					<th>Name</th>
+					<th>Roll No</th>
+					<th>Percentage</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="d in students">
+						<td>{{d.name}}</td>
+						<td>{{d.roll}}</td>
+						<td>{{d.percentage}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+</div>
+</html>		

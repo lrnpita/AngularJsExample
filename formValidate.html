@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<div>
+	<h2>AngularJS Form Validate</h2>
+	<div ng-controller = "homeController">
+		<div class="div">
+			<form name="studentForm" novalidate>
+				<label>Enter your first name </label><input type="text" name="firstName" ng-model = "student.firstName" required>
+				<span ng-show="studentForm.firstName.$error.required">First name is required</span>
+				<br>
+
+				<label>Enter your last name </label><input type="text" name="lastName" ng-model="student.lastName" required>
+				<span ng-show="studentForm.lastName.$error.required">Last name is required</span>
+				<br>
+
+				<label>Enter e-mail: </label><input type="email" name="email" ng-model = "student.email" required>
+				<span ng-show="studentForm.email.$error.email">Email is not an email valid</span>
+				<span ng-show="studentForm.email.$error.required">Email is required</span>
+				<br>
+
+				<button ng-disabled="studentForm.firstName.$invalid 
+				|| studentForm.lastName.$invalid
+				|| studentForm.email.$invalid" ng-click="submit(student)">Submit</button>
+
+				<button ng-click="reset()">Reset</button>
+			</form>
+			<div>
+				<p>Students:</p>
+				<ul>
+					<li ng-repeat="st in students">{{st.firstName}} {{st.lastName}}</li>
+				</ul>
+			</div>
+
+
+		</div>
+	</div>
+
+</div>
+</html>
